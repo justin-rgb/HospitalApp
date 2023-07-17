@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,22 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  constructor( private usuarioService: UsuarioService ){}
+
+  logout(){
+    this.usuarioService.logout()
+  }
 
 
   // CAMBIAR EL TEMA DE LA PAGINA
-  changeTheme( theme: string ){
+  // TODO: CAMBIAR TEMA DESDE EL HEADER
+  // changeTheme( theme: string ){
 
-    const linkTheme = document.querySelector('#theme')
-    const url = `./assets/css/colors/${theme}.css`
+  //   const linkTheme = document.querySelector('#theme')
+  //   const url = `./assets/css/colors/${theme}.css`
 
-    linkTheme?.setAttribute('href', url)
+  //   linkTheme?.setAttribute('href', url)
 
-  }
+  // }
 
 }
