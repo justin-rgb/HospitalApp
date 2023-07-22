@@ -9,7 +9,6 @@ import { PagesModule } from './pages/pages.module';
 import { AuthModule } from './auth/auth.module';
 import { ComponentsModule } from './components/components.module';
 
-
 @NgModule({
   declarations: [
     AppComponent,
