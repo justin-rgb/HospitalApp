@@ -4,3 +4,5 @@
 
 ##### Antes de hacer uso del proyecto, debe ejecutar el siguiente comando:
 > npm install
+
+# Subir imagenes a cloudinary para obtener el link y luego pegar screenshots

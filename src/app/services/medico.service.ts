@@ -32,6 +32,11 @@ export class MedicoService {
     }
   }
 
+  cantMedicosNombre(){
+    const url = `${base_url}/medicos/medicosN`
+    return this.http.get( url )
+  }
+
 
   cargarMedicos() {
 

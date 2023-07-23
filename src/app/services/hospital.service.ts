@@ -25,6 +25,11 @@ export class HospitalService {
     }
   }
 
+  cantHospitalesNombre(){
+    const url = `${base_url}/hospitales/hospitalesN`
+    return this.http.get( url )
+  }
+
 
   cargarHospitales() {
 

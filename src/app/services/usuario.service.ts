@@ -16,7 +16,7 @@ import { CargarUsuario } from '../interfaces/cargar-usuarios.interface';
 // const base_url = environment.base_url;
 const base_url = 'http://localhost:3000/api';
 
-declare const gapi: any;
+// declare const gapi: any;
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +40,10 @@ export class UsuarioService {
 
   get uid(): string {
     return this.usuario.uid || '';
+  }
+
+  get role(): 'ADMIN_ROLE' | 'USER_ROLE' | undefined {
+    return this.usuario.role
   }
 
   get headers(){
@@ -69,6 +73,7 @@ export class UsuarioService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('menu');
     this.router.navigateByUrl('/login');
 
     // this.auth2.signOut().then(() => {
@@ -92,6 +97,8 @@ export class UsuarioService {
         this.usuario = new Usuario( nombre, email, '', img, google, role, uid )
 
         localStorage.setItem('token', resp.token );
+        localStorage.setItem('menu', JSON.stringify(resp.menu) );
+
         return true;
       }),
       map( resp => true),
@@ -107,6 +114,7 @@ export class UsuarioService {
               .pipe(
                 tap( (resp: any) => {
                   localStorage.setItem('token', resp.token )
+                  localStorage.setItem('menu', JSON.stringify(resp.menu) );
                 })
               )
 
@@ -134,6 +142,7 @@ export class UsuarioService {
                 .pipe(
                   tap( (resp: any) => {
                     localStorage.setItem('token', resp.token )
+                    localStorage.setItem('menu', JSON.stringify(resp.menu) );
                   })
                 );
 
@@ -182,5 +191,14 @@ export class UsuarioService {
     return this.http.put(`${ base_url }/usuarios/${ usuario.uid }`, usuario, this.headers );
 
   }
+
+  cantUsuariosPorRol() {
+
+    const url = `${base_url}/usuarios/todosU`
+
+    return this.http.get( url )
+
+  }
+
 
 }
