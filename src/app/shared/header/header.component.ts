@@ -22,7 +22,9 @@ export class HeaderComponent {
     this.usuarioService.logout()
   }
 
-
+  buscar( termino: HTMLInputElement ){
+    console.log(termino.value);
+  }
   // CAMBIAR EL TEMA DE LA PAGINA
   // TODO: CAMBIAR TEMA DESDE EL HEADER
   // changeTheme( theme: string ){
