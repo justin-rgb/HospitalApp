@@ -41,7 +41,7 @@
 
 
 ### Ajustes
-<img src="https://res.cloudinary.com/my-site-justin/image/upload/f_auto,q_auto/v1/HospitalApp/o1f4twedm4kko56qqlr5"  width="40%" >
+<img src="https://res.cloudinary.com/my-site-justin/image/upload/f_auto,q_auto/v1/HospitalApp/o1f4twedm4kko56qqlr5"  width="90%" >
 
 
 ##### Antes de hacer uso del proyecto, debe ejecutar el siguiente comando:
